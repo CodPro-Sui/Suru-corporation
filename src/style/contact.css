@@ -1,0 +1,185 @@
+/* Google Font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+@keyframes bgMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 850px;
+}
+
+.contact {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+h2 {
+  text-align: center;
+  color: #fff;
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+.contact p {
+  text-align: center;
+  color: #dce7ff;
+  margin-bottom: 30px;
+  letter-spacing: 0.4px;
+}
+
+/*
+.subtitle {
+  text-align: center;
+  color: #DCE7FF;
+  margin-bottom: 30px;
+  font-size: 0.95rem;
+  padding: 5px 0;
+}*/
+
+.input-box {
+  margin-bottom: 20px;
+}
+
+.input-box label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #eef4ff;
+}
+
+.input-box span {
+  color: #ff4d4d;
+}
+
+.input-box input,
+.input-box select,
+.input-box textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: none;
+  outline: none;
+  border-radius: 12px;
+  background: #ffffff;
+  border: 2px solid #d9e3f0;
+  color: #1f2937;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.input-box textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+.input-box input:focus,
+.input-box select:focus,
+.input-box textarea:focus {
+  transform: scale(1.02);
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.35);
+}
+
+.message {
+  display: block;
+  margin-top: 6px;
+  font-size: 13px;
+  color: #ffdcdc;
+}
+
+.success {
+  color: #7cfc00;
+}
+
+.error {
+  color: #ff4b4b;
+}
+
+button {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: 600;
+  color: #fff;
+  margin: 5px auto;
+  background: #00d084;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px #00d088;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+#formMessage {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+}
+.btns-move {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 15px;
+  }
+
+  .contact {
+    padding: 25px;
+  }
+
+  h1 {
+    font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .input-box input,
+  .input-box select,
+  .input-box textarea {
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 16px;
+  }
+}

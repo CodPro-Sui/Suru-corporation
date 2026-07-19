@@ -1,0 +1,130 @@
+
+
+.greet-container{
+  font-family:Segoe UI,Tahoma,Geneva,Verdana,sans-serif; 
+  padding:20px;
+}
+
+.greet-card{
+  width:100%;
+  max-width:700px;
+  background:#fff;
+  border-radius:25px;
+  padding:45px 35px;
+  text-align:center;
+  box-shadow:0 20px 50px rgba(0,0,0,.25);
+  animation:pop .7s ease;
+}
+
+@keyframes pop{
+  from{
+    transform:scale(.8);
+    opacity:0;
+  }
+  to{
+    transform:scale(1);
+    opacity:1;
+  }
+}
+
+.success-icon{
+  width:100px;
+  height:100px;
+  margin:auto;
+  border-radius:50%;
+  background:#22c55e;
+  color:#fff;
+  font-size:55px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  box-shadow:0 0 25px rgba(34,197,94,.5);
+  animation: ani 2s ease infinite;
+}
+@keyframes ani{
+  0%,100%{
+    transform: scale(1);
+  }
+  50%{
+    transform: scale(1.23);
+  }
+}
+.company{
+  margin-top:20px;
+  color:#1d4ed8;
+  font-size:2.3rem;
+  font-weight:800;
+}
+
+.title{
+  margin-top:20px;
+  color:#111827;
+  font-size:1.8rem;
+}
+
+.description{
+  margin-top:18px;
+  color:#4b5563;
+  font-size:17px;
+  line-height:1.8;
+}
+
+.thank-box{
+  margin-top:35px;
+  background:linear-gradient(135deg,#22c55e,#16a34a);
+  color:#fff;
+  padding:20px;
+  border-radius:18px;
+}
+
+.thank-box h2{
+  margin-bottom:10px;
+  font-size:2rem;
+}
+
+.thank-box p{
+  font-size:17px;
+}
+
+@media(max-width:600px){
+
+  .company{
+    font-size:1.8rem;
+  }
+
+  .title{
+    font-size:1.35rem;
+  }
+
+  .description{
+    font-size:15px;
+  }
+
+  .success-icon{
+    width:80px;
+    height:80px;
+    font-size:45px;
+  }
+}
+.reload-btn{
+    margin-top:25px;
+    padding:14px 30px;
+    border:none;
+    border-radius:50px;
+    background: #00D084;
+    color: white;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+    box-shadow:0 8px 20px #00D08444;
+}
+
+.reload-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 12px 25px #00D08444;
+}
+
+.reload-btn:active{
+    transform:scale(.98);
+}
