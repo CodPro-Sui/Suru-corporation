@@ -8,6 +8,7 @@ import Greeting from './components/Greeting'
 import Footer from './components/Footer'
 import Header from './components/Header'
 import Progress from './components/Progress'
+
 const App = () => {
 const [steper,setSteper] = useState(1);
   //pattern
@@ -85,12 +86,12 @@ const [steper,setSteper] = useState(1);
     setData(pattern)
   }
   
+  
 
   return (
     <div className={`app`}>
       <Header/>
-      
-    <form>
+  <form>
       {steper >= 1 && steper <= 4 && <Progress w={steper}/>}
       {steper === 1 && <Contacts data={data}  TypeLive={TypeLive} move={move}/>}
       {steper === 2 && <Education data={data} TypeLive={TypeLive} move={move}/>}

@@ -1,0 +1,47 @@
+.loading {
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+inset: 0;
+z-index: 9999;
+}
+
+.load {
+  position: relative;
+  width: 260px;
+  height: 260px;
+  transform-style: preserve-3d;
+  transform: perspective(350px) rotateX(45deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.load span {
+  position: absolute;
+  inset: calc(9px * var(--i));
+  border-radius: 50%;
+  border: 3px solid whitesmoke;
+  box-shadow:  0 0 4px whitesmoke;
+  animation: load 3s ease-in-out infinite;
+  
+  animation-delay: calc(var(--i) * -0.13s);
+}
+
+@keyframes load {
+  0%,
+  100% {
+    transform: translateY(-80px);
+  }
+  50% {
+    transform: translateY(80px);
+  }
+}
+
+.cnt{
+  position: absolute;
+  text-align: center;
+  color: #17263A;
+}

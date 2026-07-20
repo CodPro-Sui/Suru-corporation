@@ -1,10 +1,13 @@
 import { useState, useCallback } from "react";
 import "../style/address.css";
+import Loading from "./Loading";
+import "../style/loading.css"
 const Address = ({ data, TypeLive ,move}) => {
 
   const [errors, setErrors] = useState({});
   const [success, setSuccess] = useState({});
 const [access,setAccess] = useState(false);
+const [loading,setLoading] = useState(false);
 
   const validate = useCallback(() => {
     let err = {};
@@ -70,6 +73,7 @@ const [access,setAccess] = useState(false);
   const handleNext = async (e) => {
     e.preventDefault();
     if(!validate()) return;
+    setLoading(true);
     try {
     const response = await fetch(
       "https://script.google.com/macros/s/AKfycbxCbScd2R6BLT2jodb6JUsTcWw_4R4vA50S6bA1tOxA3WN1eVJgaA6dOVLPiLKiGrcDkg/exec",
@@ -82,7 +86,7 @@ const [access,setAccess] = useState(false);
     const result = await response.json();
 
     if (result.success) {
-      alert("Registration Successful ✅");
+      setLoading(false);
       move(1)
     } else {
       alert(result.message);
@@ -104,6 +108,7 @@ const [access,setAccess] = useState(false);
       setAccess(false);
       return;
     }
+    setLoading(true)
     
     navigator.geolocation.getCurrentPosition(
       (position) => {
@@ -120,7 +125,8 @@ const [access,setAccess] = useState(false);
           },
         });
         setAccess(true);
-        alert("✅ Location Captured Successfully.");
+        setLoading(false);
+        
       },
       () => {
         alert("Unable to fetch location.");
@@ -394,7 +400,8 @@ const [access,setAccess] = useState(false);
 
       <div className="btns-move">
         <button type="button" onClick={() => move(0)}>Previous</button>
-      {access? <button type="submit" onClick={handleNext}>      Submit     </button>:<button type="button" onClick={handleLocation}><i className="fa-solid fa-location-dot"></i></button>}
+      {loading?<Loading/>:access? <button type="submit" onClick={handleNext}>      Submit     </button>:
+      <button type="button" onClick={handleLocation}><i className="fa-solid fa-location-dot"></i></button>}
       </div>
 
     </div>
